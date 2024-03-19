@@ -6,4 +6,8 @@ body {
   height: 730px;
 }
 
-img {}
+.card img {
+  height: 15vh;
+  object-fit: cover;
+  object-position: bottom;
+}

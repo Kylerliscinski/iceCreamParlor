@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream Parlor</title>
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css' rel='stylesheet'
+    integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+    defer></script>
+</head>
+
+<body class="debug">
+  <nav class="container-fluid row text-center text-dark">
+    <div class="col-12">
+      <h1>Ice Cream Parlor</h1>
+    </div>
+  </nav>
+  <header class="container-fluid">
+    <section class="col-12 bg-success text-white">
+      <marquee>
+        <h3>Free Ice Cream on 100th purchase!!!</h3>
+      </marquee>
+    </section>
+  </header>
+
+  <main>
+
+    <section class="container-fluid">
+      <section class="row">
+        <section class="col-6 border bg-white border-dark cartCard">
+          <div class="container-fluid justify-content-around p-5">
+            <div class="row shadow">
+              <div class="col-3">
+                <h5>Name</h5>
+              </div>
+              <div class="col-3 text-end">
+                <h5>Qty</h5>
+              </div>
+              <div class="col-3 text-end">
+                <h5>Each</h5>
+              </div>
+              <div class="col-3 text-end">
+                <h5>Total</h5>
+              </div>
+            </div>
+            <hr />
+            <div>
+              <h5>test</h5>
+            </div>
+          </div>
+        </section>
+        <section class="col-6">
+          <div>
+            <div class="card shadow">
+              <img
+                src="https://images.unsplash.com/photo-1541745537411-b8046dc6d66c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHBpenphfGVufDB8fDB8fHww"
+                alt="Picture of a pizza" class="card-img-top">
+              <div class="card-body">
+                <h3 class="card-title">Big Pepperoni Pizza</h3>
+                <p class="card-text">$10.99</p>
+                <button class=" btn btn-danger w-100" onclick="buyPepperoniPizza()">Add to Cart <i
+                    class="mdi mdi-cart-plus"></i></button>
+              </div>
+            </div>
+        </section>
+      </section>
+    </section>
+
+  </main>
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>

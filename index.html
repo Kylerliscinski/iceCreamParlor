@@ -9,8 +9,8 @@
     integrity='sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD' crossorigin='anonymous'>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="style.css">
-  <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
-    defer></script>
+  <!-- <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+    defer></script> -->
 </head>
 
 <body class="debug">
@@ -30,22 +30,20 @@
           <div class="container-fluid justify-content-around p-5">
             <div class="row shadow">
               <div class="col-3">
-                <h5>Name</h5>
-              </div>
-              <div class="col-3 text-end">
-                <h5>Qty</h5>
-              </div>
-              <div class="col-3 text-end">
-                <h5>Each</h5>
-              </div>
-              <div class="col-3 text-end">
-                <h5>Total</h5>
+                <h2>Cart</h2>
               </div>
             </div>
             <hr />
-            <div>
-              <h5>test</h5>
-            </div>
+            <section class="container-fluid">
+              <section class="row border border-dark cart-items">
+                <div id="cart-items" class="col-12"></div>
+              </section>
+            </section>
+            <hr />
+            <section id="total" class="text-end fw-bold">
+              <!-- total -->
+            </section>
+            <button class="btn btn-success w-100" onclick="checkout()">Checkout <i class="mdi mdi-cart"></i></button>
           </div>
         </section>
 
@@ -64,7 +62,7 @@
                     <div class="card-body">
                       <h4 class="card-title">Sprinkles sold individually</h4>
                       <p class="card-text">$1.50</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <button class=" btn btn-primary w-100" onclick="addItem('Sprinkles')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -78,7 +76,7 @@
                     <div class="card-body">
                       <h4 class="card-title">Chocolate Chips</h4>
                       <p class="card-text">$2.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <button class=" btn btn-primary w-100" onclick="addItem('Chocolate Chips')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -92,7 +90,7 @@
                     <div class="card-body">
                       <h4 class="card-title">Gummy Worms</h4>
                       <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <button class=" btn btn-primary w-100" onclick="addItem('Gummy Worms')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -110,12 +108,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1646318750399-77c33b8d3aac?q=80&w=1972&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
-                      <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <h4 class="card-title">Vanilla</h4>
+                      <p class="card-text">$3.00</p>
+                      <button class=" btn btn-primary w-100" onclick="addItem('Vanilla')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -124,12 +122,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1469428946640-844b286ebf50?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
-                      <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <h4 class="card-title">Chocolate</h4>
+                      <p class="card-text">$3.00</p>
+                      <button class=" btn btn-primary w-100" onclick="addItem('Chocolate')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -138,12 +136,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
-                      <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <h4 class="card-title">Strawberry</h4>
+                      <p class="card-text">$3.00</p>
+                      <button class=" btn btn-primary w-100" onclick="addItem('Strawberry')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -161,12 +159,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://images.unsplash.com/photo-1559703248-dcaaec9fab78?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
-                      <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <h4 class="card-title">Waffle Cone</h4>
+                      <p class="card-text">$.50</p>
+                      <button class=" btn btn-primary w-100" onclick="addItem('Waffle Cone')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -175,12 +173,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://media.istockphoto.com/id/816249170/photo/waffle-bowl-on-white-background.jpg?s=2048x2048&w=is&k=20&c=luTprQsYDB4FSUpa-3y70KWXoX-DsEqfu--RN0G3hME="
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
+                      <h4 class="card-title">Waffle Bowl</h4>
                       <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <button class=" btn btn-primary w-100" onclick="addItem('Waffle Bowl')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>
@@ -189,12 +187,12 @@
                 <div>
                   <div class="card shadow">
                     <img
-                      src="https://images.unsplash.com/photo-1516747773440-e114ee0d3c07?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                      src="https://media.istockphoto.com/id/479658100/photo/ice-cream-cone.jpg?s=2048x2048&w=is&k=20&c=zS7uNbMYMcyXGCQzcykIGg2wFDr66wzzan6XncVhp8E="
                       alt="Picture of a pizza" class="card-img-top">
                     <div class="card-body">
-                      <h4 class="card-title">Gummy Worms</h4>
-                      <p class="card-text">$1.00</p>
-                      <button class=" btn btn-primary w-100" onclick="">Add to Cart <i
+                      <h4 class="card-title">Sugar Cone</h4>
+                      <p class="card-text">$.25</p>
+                      <button class=" btn btn-primary w-100" onclick="addItem('Sugar Cone')">Add to Cart <i
                           class="mdi mdi-cart-heart"></i></button>
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-const toppings = [{
+const items = [{
   name: 'Sprinkles',
   price: 1.50,
   quantity: 0
@@ -12,9 +12,8 @@ const toppings = [{
   name: 'Gummy Worms',
   price: 1.00,
   quantity: 0
-}]
-
-const flavors = [{
+},
+{
   name: 'Vanilla',
   price: 3.00,
   quantity: 0
@@ -28,9 +27,8 @@ const flavors = [{
   name: 'Strawberry',
   price: 3.00,
   quantity: 0
-}]
-
-const containers = [{
+},
+{
   name: 'Waffle Cone',
   price: 3.00,
   quantity: 0
@@ -48,8 +46,8 @@ const containers = [{
 
 function addItem(itemName) {
   let purchasedItem = itemName
-  for (let i = 0; i < toppings.length; i++) {
-    let item = toppings[i]
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i]
     if (item.name == itemName) {
       purchasedItem = item
     }
@@ -62,8 +60,8 @@ function addItem(itemName) {
 function drawCart() {
   let cartContent = ''
   let cartTotal = 0
-  for (let i = 0; i < toppings.length; i++) {
-    let item = toppings[i]
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i]
     if (item.quantity > 0) {
       cartContent += `<p>${item.quantity}x ${item.name} <i class="mdi mdi-currency-usd"></i>${(item.price * item.quantity).toFixed(2)}</p>`
       cartTotal += item.quantity * item.price
@@ -77,7 +75,7 @@ function drawCart() {
 }
 
 function checkout() {
-  toppings.forEach((item) => {
+  items.forEach((item) => {
     item.quantity = 0
   })
   drawCart()
